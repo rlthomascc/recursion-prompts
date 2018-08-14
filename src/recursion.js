@@ -24,18 +24,60 @@ var arraySum = function(array) {
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+  if ( n < 0 ){
+    n = -n;
+  }
+  if( n === 0 ){
+    return true;
+  } else if ( n === 1){
+    return false;
+  }
+  return isEven( n-2 );
 };
+
 
 // 5. Sum all integers below a given integer.
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n) {
+  if(n === 0){
+    return 0;
+  }
+  if(n<0){
+    if(n===-1){
+      return 0;
+    }
+    return n+1 + sumBelow(n+1);
+  }
+  if(n===1){
+    return 0;
+  }
+  return n-1 + sumBelow(n-1);
 };
 
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+  var rangeArray = [];
+
+  if(x === 0 && y === 0 || x > y){
+    return [];
+  }
+
+  //need condition for when x is greater than y
+  if( x > y) {
+    if(  )
+  }
+
+  if(x+1 === y){
+    return rangeArray;
+  }
+
+//need negative condition//
+
+  return rangeArray.concat(x+1).concat(range(x+1,y));
 };
+
 
 // 7. Compute the exponent of a number.
 // The exponent of a number says how many times the base number is used as a factor.
